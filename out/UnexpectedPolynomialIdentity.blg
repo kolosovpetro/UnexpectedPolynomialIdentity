@@ -5,44 +5,44 @@ Reallocating 'name_of_file' (item size: 1) to 6 items.
 The style file: unsrt.bst
 Reallocating 'name_of_file' (item size: 1) to 29 items.
 Database file #1: UnexpectedPolynomialIdentity.bib
-You've used 6 entries,
+You've used 4 entries,
             1791 wiz_defined-function locations,
-            483 strings with 4754 characters,
-and the built_in function-call counts, 1069 in all, are:
-= -- 95
-> -- 42
+            471 strings with 4394 characters,
+and the built_in function-call counts, 632 in all, are:
+= -- 55
+> -- 16
 < -- 0
-+ -- 17
-- -- 11
-* -- 56
-:= -- 182
-add.period$ -- 19
-call.type$ -- 6
-change.case$ -- 6
++ -- 8
+- -- 4
+* -- 22
+:= -- 102
+add.period$ -- 13
+call.type$ -- 4
+change.case$ -- 4
 chr.to.int$ -- 0
-cite$ -- 6
-duplicate$ -- 44
-empty$ -- 113
-format.name$ -- 11
-if$ -- 233
+cite$ -- 4
+duplicate$ -- 24
+empty$ -- 79
+format.name$ -- 4
+if$ -- 141
 int.to.chr$ -- 0
-int.to.str$ -- 6
-missing$ -- 4
-newline$ -- 34
-num.names$ -- 6
-pop$ -- 19
+int.to.str$ -- 4
+missing$ -- 1
+newline$ -- 24
+num.names$ -- 4
+pop$ -- 21
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 19
+skip$ -- 12
 stack$ -- 0
-substring$ -- 50
-swap$ -- 6
+substring$ -- 25
+swap$ -- 4
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 10
-width$ -- 7
-write$ -- 66
+while$ -- 6
+width$ -- 5
+write$ -- 45

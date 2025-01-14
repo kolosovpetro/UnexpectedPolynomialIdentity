@@ -12,3 +12,4 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Template adjustments
 - Update CI/CD
 - Rename files
+- Initial version of manuscript
