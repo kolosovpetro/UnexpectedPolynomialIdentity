@@ -1,11 +1,4 @@
-# GitHub LaTeX Template
-
-[![Build PDF](https://github.com/kolosovpetro/github-latex-template/actions/workflows/build-pdf.yml/badge.svg)](https://github.com/kolosovpetro/github-latex-template/actions/workflows/build.yml/badge.svg)
-[![Build and Deploy PDF](https://github.com/kolosovpetro/github-latex-template/actions/workflows/build-and-deploy-pdf.yml/badge.svg)](https://github.com/kolosovpetro/github-latex-template/actions/workflows/build-and-deploy.yml/badge.svg)
-
-LaTeX template for GitHub including general CI/CD actions and Mathematica templates.
-
-- https://dev.azure.com/PetroKolosovProjects/github-latex-template
+# Unexpected polynomial identity
 
 ## GitHub Actions used
 
@@ -60,12 +53,3 @@ LaTeX template for GitHub including general CI/CD actions and Mathematica templa
 - `build-pdf.yml` builds project using `TeXLive`. Triggered on `pull_request`, `push` to `develop` branch
 - `build-and-deploy-pdf.yml` builds project using `TeXLive` and deploys to `GitHub Pages`. Triggered on `push` to `main`
   branch
-
-## Template example
-
-Compiled document looks like as follows
-
-<p align="center">
-  <img src="img/template_example.PNG" alt="template_example"/>
-  <img src="img/template_example2.PNG" alt="template_example"/>
-</p>
