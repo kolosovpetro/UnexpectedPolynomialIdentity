@@ -1,0 +1,26 @@
+\begin{thebibliography}{1}
+
+\bibitem{knuth1993johann}
+{Knuth, Donald E.}
+\newblock {Johann Faulhaber and sums of powers}.
+\newblock {\em {Mathematics of Computation}}, 61(203):277--294, 1993.
+\newblock \url{https://arxiv.org/abs/math/9207222}.
+
+\bibitem{oeis_numerators_of_the_coefficient_a_m_r}
+Petro Kolosov.
+\newblock {Entry A302971 in The On-Line Encyclopedia of Integer Sequences},
+  2018.
+\newblock \url{https://oeis.org/A302971}.
+
+\bibitem{oeis_denominators_of_the_coefficient_a_m_r}
+Petro Kolosov.
+\newblock {Entry A304042 in The On-Line Encyclopedia of Integer Sequences},
+  2018.
+\newblock \url{https://oeis.org/A304042}.
+
+\bibitem{alekseyev2018mathoverflow}
+{Alekseyev, Max}.
+\newblock {MathOverflow answer 297916/113033}, 2018.
+\newblock \url{https://mathoverflow.net/a/297916/113033}.
+
+\end{thebibliography}

@@ -1,40 +1,151 @@
-Your introduction here.
-Include some references~\cite{bayour2017truly,benkhettou2016conformable,caputo2009time,martins2009calculus,
-    GithubSource_2022, Sloane_theencyclopedia}.
-Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
-of type and scrambled it to make a type specimen book.
-It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
-recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+Recently, I've come back again to one of the prominent articles in area of polynomials, power sums etc.
+That is \textit{Johann Faulhaber and sums of powers}~\cite{knuth1993johann}.
+Indeed, a great source to get piece of mind in mathematics.
+What was the thing occupied my attention is an odd power identity in terms of Binomial coefficients and
+Central factorial numbers, in particular page 9
+\begin{align*}
+    n^1 &= \binom{n}{1} \\
+    n^3 &= 6 \binom{n+1}{3} + \binom{n}{1} \\
+    n^5 &= 120 \binom{n+2}{5} + 30 \binom{n+1}{3} + \binom{n}{1}
+\end{align*}
 
-Figure example
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{../img/latex_configuration}
-    ~\caption{Figure example.}\label{fig:figure}
-\end{figure}
+What was particularly interesting is that the well known identity in terms of triangular numbers
+and finite differences of cubes becomes clear and obvious, e.g
+\begin{align*}
+    \Delta n^3 = (n+1)^3 - n^3
+    =  6 \binom{n+1}{2} + \binom{n}{0}
+\end{align*}
+where $\binom{n+1}{2}$ are triangular numbers.
+Because $\left[ 6 \binom{n+2}{3} + \binom{n+1}{1} \right] - \left[ 6 \binom{n+1}{3} + \binom{n}{1} \right]$
+simplifies by means of recurrence relation of binomial coefficients.
+Moreover, the concept above allows to reach $N$-order power sum $\sum^N k^{2m+1}$
+or finite difference $\Delta^N k^{2m+1}$ of odd powers simply by changing
+binomial coefficients indexes.
+Quite strong and impressive.
 
-\begin{equation*}
-     \llceil \nobarfrac{a}{b} \rrfloor_{m}
-\end{equation*}
-\begin{equation*}
-    \llceilCoefficient{a}{b}{m}
-\end{equation*}
+However, unexpected odd power identity appears when we notice that triangular
+numbers in $\Delta n^3 = (n+1)^3 - n^3 =  6 \binom{n+1}{2} + \binom{n}{0}$
+are equivalent to the sum of first $n$ non-negative integers
+\begin{align*}
+    \binom{n+1}{2} = \sum_{k=0}^{n} k
+\end{align*}
+Which leads to identity in terms of finite differences of cubes
+\begin{align*}
+    \Delta n^3 = (n+1)^3 - n^3 = 1 + 6 \sum_{k=0}^{n} k
+\end{align*}
+It is obvious that $n^3$ evaluates to the sum of its $n-1$ finite differences, so that
+\begin{align}
+    \label{eq:cubes-compact-form}
+    n^3 = \sum_{k=0}^{n-1} \Delta k^3 = \sum_{k=0}^{n-1} \left( 1 + 6 \sum_{t=0}^{k} t \right)
+\end{align}
+In its explicit form
+\begin{align}
+    \label{eq:cubes-explicit-form}
+    n^3 &= [1+6\cdot0]+[1+6\cdot0+6\cdot1]+[1+6\cdot0+6\cdot1+6\cdot2] \\
+    &+ \cdots + [1+6\cdot0+6\cdot1+6\cdot2+\cdots+6\cdot(n-1)] \nonumber
+\end{align}
+We could use Faulhaber's formula on $\sum_{t=0}^{k} t$ in equation~\eqref{eq:cubes-compact-form},
+which leads to well known and expected identity in cubes $n^3 = \sum_{k=0}^{n-1} \sum_{t=0}^{2} \binom{3}{t} k^t$.
 
-And for any natural $m$ we have polynomial identity
-\begin{equation}
-    x^m = \sum_{k=1}^{m} T(m, k) \centralFactorial{x}{k}
-    \label{eq:knuth-power-identity}
-\end{equation}
-where $\centralFactorial{x}{k}$ denotes central factorial defined by
-\begin{equation*}
-    \centralFactorial{x}{n} = x \fallingFactorial{x+\frac{n}{2}-1}{n-1}
-\end{equation*}
-where $\fallingFactorial{n}{k} = n (n-1) (n-2) \cdots (n-k+1)$ denotes falling factorial in Knuth's notation.
-In particular,
-\begin{equation*}
-    \centralFactorial{x}{n}
-    = x \left( x+\frac{n}{2}-1 \right) \left( x+\frac{n}{2}-1 \right) \cdots \left (x+\frac{n}{2}-n-1 \right)
-    = x \prod_{k=1}^{n-1} \left( x+\frac{n}{2}-k \right)
-\end{equation*}
+Instead, let's rearrange the terms in~\eqref{eq:cubes-explicit-form} to get
+\begin{align}
+    \label{eq:rearrange}
+    n^3 = n &+ [(n-0) \cdot 6 \cdot 0] + [(n-1)\cdot6\cdot1] + [(n-2)\cdot6\cdot2] \\
+    &+ \cdots + [(n-k)\cdot 6 \cdot k] + \cdots + [1\cdot6\cdot(n-1)] \nonumber
+\end{align}
+By applying compact sigma sum notation yields an identity for cubes $n^3$
+\begin{align*}
+    n^3 = n + \sum_{k=0}^{n-1} 6k(n-k)
+\end{align*}
+The term $n$ in the sum above can be moved under sigma notation, because there is exactly $n$ iterations, therefore
+\begin{align}
+    \label{eq:cubes-sigma-notation}
+    n^3 = \sum_{k=0}^{n-1} 6k(n-k) + 1
+\end{align}
+By inspecting the expression $6k(n-k) + 1$ we iterate under summation,
+we can notice that it is symmetric over $k$, let be $T(n,k) = 6k(n-k) + 1$, then
+\begin{align*}
+    T(n,k) = T(n,n-k)
+\end{align*}
+This symmetry allows us to alter summation bounds again, so that
+\begin{align}
+    \label{eq:cubes-sigma-alter-summation-bounds}
+    n^3 = \sum_{k=1}^{n} 6k(n-k) + 1
+\end{align}
+Assume that polynomial identities
+$n^3 = \sum_{k=0}^{n-1} 6k(n-k) + 1$ and $n^3 = \sum_{k=1}^{n} 6k(n-k) + 1$
+have explicit form as follows
+\begin{align*}
+    n^3 = \sum_{k} A_{1,1} k^1(n-k)^1 + A_{1,0} k^0(n-k)^0
+\end{align*}
+where $A_{1,1} = 6$ and $A_{1,0} = 1$, respectively.
+
+It could be generalized even further, for every odd power $2m+1$, giving a set of real coefficients
+$A_{m,0}, A_{m,1},A_{m,2},A_{m,3}, \ldots, A_{m,m}$ such that
+\begin{align}
+    \label{eq:odd-power-generalized}
+    n^{2m+1} = \sum_{k=1}^{n} A_{m,0} k^0 (n-k)^0 + A_{m,1} k^1 (n-k)^1
+    + \cdots + A_{m,m} k^m (n-k)^m
+\end{align}
+Leading to numerous polynomial identities, including its compact form
+\begin{align*}
+    n^{2m+1} = \sum_{r=0}^{m} \sum_{k=1}^{n} A_{m,r} k^r (n-k)^r; \quad n^{2m+1} = \sum_{r=0}^{m} \sum_{k=0}^{n-1} A_{m,r} k^r (n-k)^r
+\end{align*}
+For example,
+\begin{align*}
+    n^3 &= \sum_{k=1}^{n} 6k(n-k) + 1 \\
+    n^5 &= \sum_{k=1}^{n} 30k^2(n-k)^2 + 1 \\
+    n^7 &= \sum_{k=1}^{n} 140 k^3 (n-k)^3 - 14k(n-k) + 1 \\
+    n^9 &= \sum_{k=1}^{n} 630 k^4(n-k)^4 - 120k(n-k) + 1 \\
+    n^{11} &= \sum_{k=1}^{n} 2772 k^5(n-k)^5 + 660 k^2(n-k)^2 - 1386k(n-k) + 1
+\end{align*}
+
+Table of these coefficients
+
+\begin{table}[H]
+    \begin{center}
+        \setlength\extrarowheight{-6pt}
+        \begin{tabular}{c|cccccccc}
+            $m/r$ & 0 & 1       & 2      & 3      & 4   & 5    & 6     & 7 \\ [3px]
+            \hline
+            0     & 1 &         &        &        &     &      &       &       \\
+            1     & 1 & 6       &        &        &     &      &       &       \\
+            2     & 1 & 0       & 30     &        &     &      &       &       \\
+            3     & 1 & -14     & 0      & 140    &     &      &       &       \\
+            4     & 1 & -120    & 0      & 0      & 630 &      &       &       \\
+            5     & 1 & -1386   & 660    & 0      & 0   & 2772 &       &       \\
+            6     & 1 & -21840  & 18018  & 0      & 0   & 0    & 12012 &       \\
+            7     & 1 & -450054 & 491400 & -60060 & 0   & 0    & 0     & 51480
+        \end{tabular}
+    \end{center}
+    \caption{Coefficients $\coeffA{m}{r}$. See OEIS sequences
+    ~\cite{oeis_numerators_of_the_coefficient_a_m_r,oeis_denominators_of_the_coefficient_a_m_r}.}
+    \label{tab:table_of_coefficients_a}
+\end{table}
+
+Recurrence relation for $A_{m,r}$ is given by~\cite{alekseyev2018mathoverflow}.
+
+\section{Questions}\label{sec:questions}
+
+\begin{question}
+    The algorithm we used to obtain identities for
+    cubes~\eqref{eq:cubes-sigma-notation} and~\eqref{eq:cubes-sigma-alter-summation-bounds}
+    is quite simple, if not naive.
+    I believe it should be discussed in mathematical literature, as well as identity
+    that gives a set of real coefficients $A_{m,r}$ such that
+    \begin{align*}
+        n^{2m+1} = \sum_{k=1}^{n} A_{m,0} k^0 (n-k)^0 + A_{m,1} (n-k)^1
+        + \cdots + A_{m,m} k^m (n-k)^m
+    \end{align*}
+    However, I was not able to find any references that in particular mention coefficients $A_{m,r}$,
+    which is one of open questions.
+\end{question}
+
+\begin{question}
+    Can we consider the process of obtaining the identities~\eqref{eq:cubes-sigma-notation} and~\eqref{eq:cubes-sigma-alter-summation-bounds}
+    as an interpolation technique?
+\end{question}
+
+\begin{question}
+    If the question (2.2) is true, can we consider equation~\eqref{eq:odd-power-generalized} as an interpolation technique too?
+\end{question}
