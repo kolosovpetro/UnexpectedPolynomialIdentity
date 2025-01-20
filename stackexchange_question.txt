@@ -1,5 +1,6 @@
-Recently, I've come back again to one of the prominent articles in area of polynomials, power sums etc.
-That is \textit{Johann Faulhaber and sums of powers}~\cite{knuth1993johann}.
+﻿Recently, I've come back again to one of the prominent articles in area of polynomials, power sums etc.
+That is *Johann Faulhaber and sums of powers*: https://arxiv.org/abs/math/9207222.
+
 Indeed, a great source to get piece of mind in mathematics.
 What was the thing occupied my attention is an odd power identity in terms of Binomial coefficients and
 Central factorial numbers, in particular page 9
@@ -36,18 +37,17 @@ Which leads to identity in terms of finite differences of cubes
 It is obvious that $n^3$ evaluates to the sum of its $n-1$ finite differences, so that
 \begin{align}
     \label{eq:cubes-compact-form}
-    n^3 = \sum_{k=0}^{n-1} \Delta k^3 = \sum_{k=0}^{n-1} \left( 1 + 6 \sum_{t=0}^{k} t \right)
+    n^3 = \sum_{k=0}^{n-1} \Delta k^3 = \sum_{k=0}^{n-1} \left( 1 + 6 \sum_{t=0}^{k} t \right) \quad \quad (1.0)
 \end{align}
 In its explicit form
 \begin{align}
-    \label{eq:cubes-explicit-form}
-    n^3 &= [1+6\cdot0]+[1+6\cdot0+6\cdot1]+[1+6\cdot0+6\cdot1+6\cdot2] \\
+    n^3 &= [1+6\cdot0]+[1+6\cdot0+6\cdot1]+[1+6\cdot0+6\cdot1+6\cdot2] \quad \quad (2.0)  \\
     &+ \cdots + [1+6\cdot0+6\cdot1+6\cdot2+\cdots+6\cdot(n-1)] \nonumber
 \end{align}
-We could use Faulhaber's formula on $\sum_{t=0}^{k} t$ in equation~\eqref{eq:cubes-compact-form},
+We could use Faulhaber's formula on $\sum_{t=0}^{k} t$ in equation (1.0),
 which leads to well known and expected identity in cubes $n^3 = \sum_{k=0}^{n-1} \sum_{t=0}^{2} \binom{3}{t} k^t$.
 
-Instead, let's rearrange the terms in~\eqref{eq:cubes-explicit-form} to get
+Instead, let's rearrange the terms in (2.0) to get
 \begin{align}
     \label{eq:rearrange}
     n^3 = n &+ [(n-0) \cdot 6 \cdot 0] + [(n-1)\cdot6\cdot1] + [(n-2)\cdot6\cdot2] \\
@@ -60,7 +60,7 @@ By applying compact sigma sum notation yields an identity for cubes $n^3$
 The term $n$ in the sum above can be moved under sigma notation, because there is exactly $n$ iterations, therefore
 \begin{align}
     \label{eq:cubes-sigma-notation}
-    n^3 = \sum_{k=0}^{n-1} 6k(n-k) + 1
+    n^3 = \sum_{k=0}^{n-1} 6k(n-k) + 1 \quad \quad (3.0)
 \end{align}
 By inspecting the expression $6k(n-k) + 1$ we iterate under summation,
 we can notice that it is symmetric over $k$, let be $T(n,k) = 6k(n-k) + 1$, then
@@ -70,7 +70,7 @@ we can notice that it is symmetric over $k$, let be $T(n,k) = 6k(n-k) + 1$, then
 This symmetry allows us to alter summation bounds again, so that
 \begin{align}
     \label{eq:cubes-sigma-alter-summation-bounds}
-    n^3 = \sum_{k=1}^{n} 6k(n-k) + 1
+    n^3 = \sum_{k=1}^{n} 6k(n-k) + 1 \quad \quad (4.0)
 \end{align}
 Assume that polynomial identities
 $n^3 = \sum_{k=0}^{n-1} 6k(n-k) + 1$ and $n^3 = \sum_{k=1}^{n} 6k(n-k) + 1$
@@ -85,7 +85,7 @@ $A_{m,0}, A_{m,1},A_{m,2},A_{m,3}, \ldots, A_{m,m}$ such that
 \begin{align}
     \label{eq:odd-power-generalized}
     n^{2m+1} = \sum_{k=1}^{n} A_{m,0} k^0 (n-k)^0 + A_{m,1} k^1 (n-k)^1
-    + \cdots + A_{m,m} k^m (n-k)^m
+    + \cdots + A_{m,m} k^m (n-k)^m \quad \quad (5.0)
 \end{align}
 Leading to numerous polynomial identities, including its compact form
 \begin{align*}
@@ -100,36 +100,14 @@ For example,
     n^{11} &= \sum_{k=1}^{n} 2772 k^5(n-k)^5 + 660 k^2(n-k)^2 - 1386k(n-k) + 1
 \end{align*}
 
-Table of these coefficients
-
-\begin{table}[H]
-    \begin{center}
-        \setlength\extrarowheight{-6pt}
-        \begin{tabular}{c|cccccccc}
-            $m/r$ & 0 & 1       & 2      & 3      & 4   & 5    & 6     & 7 \\ [3px]
-            \hline
-            0     & 1 &         &        &        &     &      &       &       \\
-            1     & 1 & 6       &        &        &     &      &       &       \\
-            2     & 1 & 0       & 30     &        &     &      &       &       \\
-            3     & 1 & -14     & 0      & 140    &     &      &       &       \\
-            4     & 1 & -120    & 0      & 0      & 630 &      &       &       \\
-            5     & 1 & -1386   & 660    & 0      & 0   & 2772 &       &       \\
-            6     & 1 & -21840  & 18018  & 0      & 0   & 0    & 12012 &       \\
-            7     & 1 & -450054 & 491400 & -60060 & 0   & 0    & 0     & 51480
-        \end{tabular}
-    \end{center}
-    \caption{Coefficients $\coeffA{m}{r}$. See OEIS sequences
-    ~\cite{oeis_numerators_of_the_coefficient_a_m_r,oeis_denominators_of_the_coefficient_a_m_r}.}
-    \label{tab:table_of_coefficients_a}
-\end{table}
-
 Recurrence relation for $A_{m,r}$ is given by~\cite{alekseyev2018mathoverflow}.
+OEIS sequences for $A_{m,r}$: https://oeis.org/A302971, https://oeis.org/A304042
 
-\section{Questions}\label{sec:questions}
+---
 
-\begin{question}
+**Question** 1:
     The algorithm we used to obtain identities for
-    cubes~\eqref{eq:cubes-sigma-notation} and~\eqref{eq:cubes-sigma-alter-summation-bounds}
+    cubes (3.0) and (4.0)
     is quite simple, if not naive.
     I believe it should be discussed in mathematical literature, as well as identity
     that gives a set of real coefficients $A_{m,r}$ such that
@@ -139,13 +117,7 @@ Recurrence relation for $A_{m,r}$ is given by~\cite{alekseyev2018mathoverflow}.
     \end{align*}
     However, I was not able to find any references that in particular mention coefficients $A_{m,r}$,
     which is one of open questions.
-\end{question}
 
-\begin{question}
-    Can we consider the process of obtaining the identities~\eqref{eq:cubes-sigma-notation} and~\eqref{eq:cubes-sigma-alter-summation-bounds}
-    as an interpolation technique?
-\end{question}
+**Question** 2: Can we consider the process of obtaining the identities (3.0) and (4.0) as an interpolation technique?
 
-\begin{question}
-    If the question (2.2) is true, can we consider equation~\eqref{eq:odd-power-generalized} as an interpolation technique too?
-\end{question}
+**Question** 1: If the question 2 is true, can we consider equation (5.0) as an interpolation technique too?
