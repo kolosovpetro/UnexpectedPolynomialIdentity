@@ -13,6 +13,8 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Cleanup unused files
 - Commit run configuration
 - Update metadata
+- Add abstract
+- Update introduction
 
 ## [1.0.1] - 2025-01-20
 

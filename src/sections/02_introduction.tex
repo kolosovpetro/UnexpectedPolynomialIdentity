@@ -123,7 +123,11 @@ Table of these coefficients
     \label{tab:table_of_coefficients_a}
 \end{table}
 
-Recurrence relation for $A_{m,r}$ is given by~\cite{alekseyev2018mathoverflow}.
+Recurrence relation for $\coeffA{m}{r}$ is given by~\cite{alekseyev2018mathoverflow}.
+One more interesting observation about row sums
+\begin{align*}
+    \sum_{r=0}^{m} \coeffA{m}{r} = 2^{2m+1} - 1
+\end{align*}
 
 \section{Questions}\label{sec:questions}
 
@@ -137,15 +141,12 @@ Recurrence relation for $A_{m,r}$ is given by~\cite{alekseyev2018mathoverflow}.
         n^{2m+1} = \sum_{k=1}^{n} A_{m,0} k^0 (n-k)^0 + A_{m,1} k^1 (n-k)^1
         + \cdots + A_{m,m} k^m (n-k)^m
     \end{align*}
-    However, I was not able to find any references that in particular mention coefficients $A_{m,r}$,
+    However, I was not able to find any widely-known references that mention coefficients $A_{m,r}$,
     which is one of open questions.
+    If you find any appearance of these identities in widely-known math sources -- please let me know.
 \end{question}
 
 \begin{question}
-    Can we consider the process of obtaining the identities~\eqref{eq:cubes-sigma-notation} and~\eqref{eq:cubes-sigma-alter-summation-bounds}
-    as an interpolation technique?
-\end{question}
-
-\begin{question}
-    If the question (2.2) is true, can we consider equation~\eqref{eq:odd-power-generalized} as an interpolation technique too?
+    Is the process we used in obtaining the identities~\eqref{eq:cubes-sigma-notation} and~\eqref{eq:cubes-sigma-alter-summation-bounds}
+    is an interpolation technique?
 \end{question}
