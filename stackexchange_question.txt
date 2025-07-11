@@ -1,4 +1,4 @@
-﻿Recently, I've come back again to one of the prominent articles in area of polynomials, power sums etc.
+Recently, I've come back again to one of the prominent articles in area of polynomials, power sums etc.
 That is *Johann Faulhaber and sums of powers*: https://arxiv.org/abs/math/9207222.
 
 Indeed, a great source to get piece of mind in mathematics.
@@ -106,7 +106,7 @@ For example,
 
 ---
 
-**Question 1**:
+**Question**:
     The algorithm we used to obtain identities for
     cubes (3.0) and (4.0)
     is quite simple, if not naive.
@@ -116,10 +116,6 @@ For example,
         n^{2m+1} = \sum_{k=1}^{n} A_{m,0} k^0 (n-k)^0 + A_{m,1} k^1 (n-k)^1
         + \cdots + A_{m,m} k^m (n-k)^m
     \end{align*}
-    However, I was not able to find any references that in particular mention coefficients $A_{m,r}$,
-    which is one of open questions.
-
-**Question 2**: Can we consider the process of obtaining the identities (3.0) and (4.0) as an interpolation technique?
-
-**Question 3**: If the question 2 is true, can we consider equation (5.0) as an interpolation technique too?
+    However, I was not able to find any references that mention coefficients $A_{m,r}$, odd-power identities etc,
+    so have you seen these coefficients $A_{m,r}$ appearing in peer reviewed literature before? If so, please share
 
