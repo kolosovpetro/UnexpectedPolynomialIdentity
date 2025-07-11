@@ -1,23 +1,26 @@
 Recently, I've come back again to one of the prominent articles in area of polynomials, power sums etc.
 That is \textit{Johann Faulhaber and sums of powers}~\cite{knuth1993johann}.
-Indeed, a great source to get piece of mind in mathematics.
-What was the thing occupied my attention is an odd power identity in terms of Binomial coefficients and
-Central factorial numbers, in particular page 9
+Indeed, it is a great source to reach piece of mind in mathematics.
+The thing that occupied my attention was the odd power identity in terms of Binomial coefficients and
+Central factorial numbers, which can be found on page 9
 \begin{align*}
     n^1 &= \binom{n}{1} \\
     n^3 &= 6 \binom{n+1}{3} + \binom{n}{1} \\
     n^5 &= 120 \binom{n+2}{5} + 30 \binom{n+1}{3} + \binom{n}{1}
 \end{align*}
 
-What was particularly interesting is that the well known identity in terms of triangular numbers
-and finite differences of cubes becomes clear and obvious, e.g
+It is particularly interesting that well-known identity in terms of triangular numbers
+and finite differences of cubes becomes clear and obvious
 \begin{align*}
     \Delta n^3 = (n+1)^3 - n^3
     =  6 \binom{n+1}{2} + \binom{n}{0}
 \end{align*}
 where $\binom{n+1}{2}$ are triangular numbers.
-Because $\left[ 6 \binom{n+2}{3} + \binom{n+1}{1} \right] - \left[ 6 \binom{n+1}{3} + \binom{n}{1} \right]$
-simplifies by means of recurrence relation of binomial coefficients.
+It is true that
+\begin{align*}
+    \Delta n^3 = \left[ 6 \binom{n+2}{3} + \binom{n+1}{1} \right] - \left[ 6 \binom{n+1}{3} + \binom{n}{1} \right] = 6 \binom{n+1}{2} + \binom{n}{0}
+\end{align*}
+by means of binomial coefficients' recurrence.
 Moreover, the concept above allows to reach $N$-order power sum $\sum^N k^{2m+1}$
 or finite difference $\Delta^N k^{2m+1}$ of odd powers simply by changing
 binomial coefficients indexes.
@@ -63,11 +66,12 @@ The term $n$ in the sum above can be moved under sigma notation, because there i
     n^3 = \sum_{k=0}^{n-1} 6k(n-k) + 1
 \end{align}
 By inspecting the expression $6k(n-k) + 1$ we iterate under summation,
-we can notice that it is symmetric over $k$, let be $T(n,k) = 6k(n-k) + 1$, then
+we can notice that it is symmetric over $k$.
+Let be $T(n,k) = 6k(n-k) + 1$ then
 \begin{align*}
     T(n,k) = T(n,n-k)
 \end{align*}
-This symmetry allows us to alter summation bounds again, so that
+This symmetry allows us to alter summation bounds easily, so that
 \begin{align}
     \label{eq:cubes-sigma-alter-summation-bounds}
     n^3 = \sum_{k=1}^{n} 6k(n-k) + 1
@@ -80,14 +84,15 @@ have explicit form as follows
 \end{align*}
 where $A_{1,1} = 6$ and $A_{1,0} = 1$, respectively.
 
-It could be generalized even further, for every odd power $2m+1$, giving a set of real coefficients
-$A_{m,0}, A_{m,1},A_{m,2},A_{m,3}, \ldots, A_{m,m}$ such that
+It could be generalized even further, for every odd power $2m+1$, by utilizing the set of real coefficients
+$A_{m,0}, A_{m,1},A_{m,2},A_{m,3}, \ldots, A_{m,m}$.
+Therefore,
 \begin{align}
     \label{eq:odd-power-generalized}
     n^{2m+1} = \sum_{k=1}^{n} A_{m,0} k^0 (n-k)^0 + A_{m,1} k^1 (n-k)^1
     + \cdots + A_{m,m} k^m (n-k)^m
 \end{align}
-Leading to numerous polynomial identities, including its compact form
+It leads us to numerous polynomial identities, including compact form sums
 \begin{align*}
     n^{2m+1} = \sum_{r=0}^{m} \sum_{k=1}^{n} A_{m,r} k^r (n-k)^r; \quad n^{2m+1} = \sum_{r=0}^{m} \sum_{k=0}^{n-1} A_{m,r} k^r (n-k)^r
 \end{align*}
