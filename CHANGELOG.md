@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Update build scripts
 - Cleanup unused files
 - Commit run configuration
+- Update metadata
 
 ## [1.0.1] - 2025-01-20
 
